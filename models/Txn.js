@@ -1,7 +1,7 @@
 const {
  DataTypes
 } = require('sequelize');
-var sequelize = require('../config/dbConnect.js');
+const sequelize = require('../config/dbConnect.js');
 
 const Txn = sequelize.define('txn', {
  id: {
@@ -10,9 +10,18 @@ const Txn = sequelize.define('txn', {
   allowNull: false,
   primaryKey: true
  },
- value: {
+ qbCustomerRef: {
   type: DataTypes.INTEGER
- }
+ },
+ qbId: {
+  type: DataTypes.INTEGER,
+ },
+ totalAmount: {
+  type: DataTypes.INTEGER,
+ },
+ qbCreateTime: {
+  type: DataTypes.DATE,
+ },
 })
 
 module.exports = Txn;
